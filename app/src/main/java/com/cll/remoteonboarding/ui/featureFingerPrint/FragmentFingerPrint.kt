@@ -2,18 +2,14 @@ package com.cll.remoteonboarding.ui.featureFingerPrint
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.MenuRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.ListPopupWindow
-import androidx.appcompat.widget.PopupMenu
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -22,15 +18,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.cll.FingerPrintModule.FingerCaptureActivity
 import com.cll.FingerPrintModule.utils.ResultScan
-import com.cll.remoteonboarding.ApplicationUtils
-import com.cll.remoteonboarding.ApplicationUtilsImpl
+import com.cll.core.ApplicationUtils
+import com.cll.core.ApplicationUtilsImpl
 import com.cll.remoteonboarding.R
 import com.cll.remoteonboarding.databinding.FragmentFragmentFingerPrintBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -80,8 +74,7 @@ class FragmentFingerPrint : Fragment(), ApplicationUtils by ApplicationUtilsImpl
         binding.btnNext.setOnClickListener {
 
             findNavController().navigate(
-                R.id.action_fragmentFingerPrint_to_SecondFragment,
-                bundleOf("userId" to 1)
+                R.id.action_fragmentFingerPrint_to_SecondFragment, bundleOf("userId" to 1)
             )
         }
 

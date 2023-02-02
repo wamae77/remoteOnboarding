@@ -68,9 +68,9 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.androidxConstraintlayout"
     implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.androidxNavigationktx"
     implementation "androidx.navigation:navigation-ui-ktx:$rootProject.androidxNavigationktx"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation "androidx.legacy:legacy-support-v4:$rootProject.legacySupport"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifeCycleKtx"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifeCycleKtx"
     testImplementation "junit:junit:$rootProject.junit4"
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxTestExt"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.androidXEspressoCore"
@@ -86,6 +86,10 @@ dependencies {
 
     implementation project(path: ':AirsnapFaceCore')
     implementation project(path: ':AirsnapFaceUI')
+    implementation project(path: ':ResourcesModule')
+    implementation project(path: ':featureFaceCapture')
+    implementation project(path: ':core')
+    implementation project(path: ':database')
 
     implementation "com.google.dagger:hilt-android:$rootProject.hilt"
     kapt("com.google.dagger:hilt-android-compiler:$rootProject.hilt")
@@ -108,8 +112,8 @@ dependencies {
 
 
     //glide
-    implementation 'com.github.bumptech.glide:glide:4.14.2'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glide"
 }
 
 kapt {

@@ -14,9 +14,13 @@
             <option value="$PROJECT_DIR$/AirsnapFaceCore" />
             <option value="$PROJECT_DIR$/AirsnapFaceUI" />
             <option value="$PROJECT_DIR$/FingerprintModule" />
+            <option value="$PROJECT_DIR$/ResourcesModule" />
             <option value="$PROJECT_DIR$/T5FingerCellSdk" />
             <option value="$PROJECT_DIR$/T5TouchView" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/database" />
+            <option value="$PROJECT_DIR$/featureFaceCapture" />
             <option value="$PROJECT_DIR$/opencv_411" />
             <option value="$PROJECT_DIR$/smart-engine-scan" />
           </set>

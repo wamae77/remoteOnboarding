@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.cll.remoteonboarding.R
-import com.cll.remoteonboarding.data.local.dao.FingerPrintDao
-import com.cll.remoteonboarding.data.local.entities.EntityFingerPrint
-import com.cll.remoteonboarding.data.local.repositories.FingerPrintRepository
+import com.cll.database.dao.FingerPrintDao
+import com.cll.database.entities.EntityFingerPrint
+import com.cll.database.repositories.FingerPrintRepository
 import com.cll.remoteonboarding.model.FingerPrint
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -73,7 +73,7 @@ class FragmentFingerPrintViewModel @Inject constructor(
 
     fun addFingerPrints(fingerPrints: ArrayList<com.cll.FingerPrintModule.utils.FingerPrint>) {
         val prints = fingerPrints.map {
-            EntityFingerPrint(
+            com.cll.database.entities.EntityFingerPrint(
                 0,
                 userId = 0,
                 imagePath = it.imagePath,
@@ -93,7 +93,7 @@ class FragmentFingerPrintViewModel @Inject constructor(
 }
 
 
-fun EntityFingerPrint.toFingerPrint(pos: String) = FingerPrint(
+fun com.cll.database.entities.EntityFingerPrint.toFingerPrint(pos: String) = FingerPrint(
     id, imagePath, pos, quality
 )
 

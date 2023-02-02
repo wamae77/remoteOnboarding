@@ -11,7 +11,7 @@ import com.cll.remoteonboarding.databinding.FragmentFirstBinding
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment: Fragment(), ApplicationUtils by ApplicationUtilsImpl() {
+class FirstFragment: Fragment(), com.cll.core.ApplicationUtils by com.cll.core.ApplicationUtilsImpl() {
 
     private var _binding: FragmentFirstBinding? = null
 

@@ -11,6 +11,8 @@ buildscript {
         androidxAppCompat = "1.6.0"
         androidxNavigationktx = "2.5.3"
         androidxConstraintlayout = "2.1.4"
+        lifeCycleKtx = "2.5.1"
+        legacySupport = "1.0.0"
         androidxTestExt = "1.1.5"
         androidXEspressoCore = "3.5.1"
         materialDesign = "1.7.0"
@@ -23,6 +25,7 @@ buildscript {
         buildToolsVersion = '30.0.3'
         room_version = "2.5.0"
         hilt = "2.44"
+        glide = "4.14.2"
     }
 
 }

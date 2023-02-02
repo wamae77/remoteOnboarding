@@ -10,13 +10,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RemoteOnboarding"
-        tools:targetApi="31">
+        android:theme="@style/RemoteOnboardingTheme"
+        tools:targetApi="31"
+        tools:replace="android:theme">
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.RemoteOnboarding">
+            android:theme="@style/RemoteOnboardingTheme">
             <intent-filter>
                 <action android:name="android.media.action.IMAGE_CAPTURE" />
                 <action android:name="android.intent.action.MAIN" />
