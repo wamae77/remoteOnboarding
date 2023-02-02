@@ -1,0 +1,117 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'com.cll.remoteonboarding'
+    compileSdk rootProject.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.example.onboarding"
+        //applicationId "com.cll.remoteonboarding"
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), "proguard-rules.pro"
+            buildConfigField("boolean", "DEBUG_MODE", "true")
+
+            buildConfigField("String", "BASE_URL_ONBOARDING", "\"http://3.133.93.130:8080/onboarding/api/v1/\"")
+            buildConfigField("String", "BASE_URL_IPRS", "\"http://197.220.114.46:9004/api/v1/iprs/\"")
+            buildConfigField("String", "BASE_URL_TECH5MBAP", "\"http://gn-testapi.tech5.tech:9090/MBAP/api/\"")
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "DEBUG_MODE", "false")
+
+            buildConfigField("String", "BASE_URL_ONBOARDING", "\"http://3.133.93.130:8080/onboarding/api/v1/\"")
+            buildConfigField("String", "BASE_URL_IPRS", "\"http://197.220.114.46:9004/api/v1/iprs/\"")
+            buildConfigField("String", "BASE_URL_TECH5MBAP", "\"http://gn-testapi.tech5.tech:9090/MBAP/api/\"")
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    packagingOptions {
+        //lib in Face and Fingerprint sdks
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libncnn.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libncnn.so'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
+    implementation "androidx.core:core-ktx:$rootProject.androidxCore"
+    implementation "androidx.appcompat:appcompat:$rootProject.androidxAppCompat"
+    implementation "com.google.android.material:material:$rootProject.materialDesign"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.androidxConstraintlayout"
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.androidxNavigationktx"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.androidxNavigationktx"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    testImplementation "junit:junit:$rootProject.junit4"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxTestExt"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.androidXEspressoCore"
+
+    implementation "androidx.datastore:datastore-preferences:$rootProject.androidXDataStorePreference"
+    
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+
+    implementation project(path: ':FingerprintModule')
+    implementation project(path: ':smart-engine-scan')
+
+    implementation project(path: ':AirsnapFaceCore')
+    implementation project(path: ':AirsnapFaceUI')
+
+    implementation "com.google.dagger:hilt-android:$rootProject.hilt"
+    kapt("com.google.dagger:hilt-android-compiler:$rootProject.hilt")
+
+
+    //room database
+    implementation("androidx.room:room-runtime:$rootProject.room_version")
+    annotationProcessor("androidx.room:room-compiler:$rootProject.room_version")
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$rootProject.room_version")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$rootProject.room_version")
+    // optional - Test helpers
+    testImplementation("androidx.room:room-testing:$rootProject.room_version")
+
+    // optional - Paging 3 Integration
+    implementation("androidx.room:room-paging:$rootProject.room_version")
+
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+}
+
+kapt {
+    correctErrorTypes = true
+}

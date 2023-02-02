@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DashboardTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">#cccccc</item>
+        <item name="colorAccent">#ffffff</item>
+    </style>
+
+    <style name="DashboardTitleTheme" parent="DashboardTheme">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:fontFamily">@font/futura_round_bold</item>
+    </style>
+</resources>

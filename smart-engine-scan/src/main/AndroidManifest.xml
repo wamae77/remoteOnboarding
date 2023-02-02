@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.smartengines">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application android:largeHeap="true">
+        <activity
+            android:name="com.smartengines.ScanSmartActivity"
+            android:theme="@style/DashboardTheme" />
+        <activity
+            android:name="com.smartengines.MainResultView"
+            android:theme="@style/DashboardTheme" />
+    </application>
+</manifest>

@@ -1,0 +1,16 @@
+ai.tech5.sdk.abis.T5AirSnap
+raw backbone
+raw backboneweights
+raw br2
+raw br2model
+raw br3
+raw br3model
+raw fpq
+raw fpqweights
+raw last
+raw lastmodel
+raw model
+raw symbol
+raw thumb
+raw thumbweights
+string app_name

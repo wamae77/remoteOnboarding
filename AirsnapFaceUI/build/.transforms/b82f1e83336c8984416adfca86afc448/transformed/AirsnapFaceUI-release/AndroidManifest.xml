@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ai.tech5.ui" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="30" />
+
+    <application>
+        <activity
+            android:name="ai.tech5.pheonix.capture.activity.CaptureImageActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

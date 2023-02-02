@@ -1,0 +1,2 @@
+com.phoenixcapture.camerakit
+dimen focus_view_size

@@ -1,0 +1,37 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        /* needed by the fingerprint module*/
+        maven { url 'https://androidx.dev/snapshots/builds/6787662/artifacts/repository/' }
+        maven {
+            name 'repoTech5'
+            url "https://repo.tech5-sa.com/repository/fingerprints"
+            credentials {
+                username = ""
+                password = ""
+                // repoTech5Username=LOGIN
+                // repoTech5Password=PASSWORD
+            }
+        }
+        /*------------------------------------------*/
+    }
+}
+rootProject.name = "RemoteOnboarding"
+include ':app'
+include ':FingerprintModule'
+include ':T5FingerCellSdk'
+include ':T5TouchView'
+include ':opencv_411'
+include ':smart-engine-scan'
+include ':AirsnapFaceCore'
+include ':AirsnapFaceUI'

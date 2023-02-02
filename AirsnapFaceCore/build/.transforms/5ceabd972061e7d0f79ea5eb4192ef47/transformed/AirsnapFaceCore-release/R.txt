@@ -1,0 +1,1 @@
+int dimen focus_view_size 0x0

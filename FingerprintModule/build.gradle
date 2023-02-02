@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    signingConfigs {
+        release {
+            storeFile file(var)
+            storePassword 'gfhjkm'
+            keyAlias 'android'
+            keyPassword 'gfhjkm'
+        }
+    }
+    namespace 'com.cll.FingerPrintModule'
+    compileSdk rootProject.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.minSdkVersion
+        targetSdk  rootProject.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        disable 'ExpiredTargetSdkVersion'
+    }
+}
+dependencies {
+
+    
+    implementation "androidx.appcompat:appcompat:$rootProject.androidxAppCompat"
+    implementation "com.google.android.material:material:$rootProject.materialDesign"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.androidxConstraintlayout"
+    testImplementation "junit:junit:$rootProject.junit4"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxTestExt"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.androidXEspressoCore"
+
+    implementation project(path: ':T5FingerCellSdk')
+    implementation project(path: ':T5TouchView')
+    implementation project(path: ':opencv_411')
+
+    // CameraX core library
+    implementation "androidx.camera:camera-core:$rootProject.camerax_version"
+    implementation "androidx.camera:camera-camera2:$rootProject.camerax_version"
+    implementation "androidx.camera:camera-lifecycle:$rootProject.camerax_version"
+    implementation "androidx.camera:camera-view:$rootProject.camerax_version"
+}
