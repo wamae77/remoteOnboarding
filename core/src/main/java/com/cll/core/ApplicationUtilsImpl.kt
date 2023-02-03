@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class ApplicationUtilsImpl() : ApplicationUtils {
+class ApplicationUtilsImpl : ApplicationUtils {
 
 
     companion object {
