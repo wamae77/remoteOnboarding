@@ -32,6 +32,11 @@ class MainActivity : AppCompatActivity(), com.cll.core.ApplicationUtils by com.c
         setupActionBarWithNavController(navController, appBarConfiguration)
 
 
+        navController.addOnDestinationChangedListener{ _, destination, _ ->
+            if (destination.id == R.id.fragmentLogin){
+                binding.toolbar.setNavigationIcon(com.cll.resourcesmodule.R.drawable.baseline_close_24)
+            }
+        }
         binding.fab.setOnClickListener { view ->
 
 

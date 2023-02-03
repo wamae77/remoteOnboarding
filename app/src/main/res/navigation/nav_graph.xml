@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentFingerPrint">
+    app:startDestination="@id/fragmentLogin">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -31,11 +31,11 @@
     <fragment
         android:id="@+id/fragmentLogin"
         android:name="com.cll.remoteonboarding.ui.featureLogin.FragmentLogin"
-        android:label="fragment_fragment_login"
+        android:label=""
         tools:layout="@layout/fragment_fragment_login" >
         <action
-            android:id="@+id/action_fragmentLogin_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_fragmentLogin_to_FragmentFingerPrint"
+            app:destination="@id/fragmentFingerPrint" />
     </fragment>
     <fragment
         android:id="@+id/fragmentFingerPrint"

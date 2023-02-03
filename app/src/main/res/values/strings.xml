@@ -51,6 +51,11 @@
     <string name="next">Next</string>
     <string name="no_fingerprints">No FingerPrints</string>
 
+    <!--    login screen -->
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="sign_up_instead">Don\'t have an account? Sign up</string>
+    <string name="log_in">Log in</string>
+
     <string-array name="fingerPositionIndex">
         <item>Left slap</item>
         <item>Right slap</item>
@@ -62,7 +67,6 @@
         <item>Left index and middle</item>
         <item>Right index and middle</item>
     </string-array>
-
 
 
 </resources>
