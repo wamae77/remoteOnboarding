@@ -85,7 +85,7 @@ dependencies {
     implementation project(path: ':FingerprintModule')
     implementation project(path: ':smart-engine-scan')
     implementation project(path: ':ResourcesModule')
-    implementation project(path: ':featureFaceCapture')
+    //implementation project(path: ':featureFaceCapture')
     implementation project(path: ':core')
     implementation project(path: ':database')
 
