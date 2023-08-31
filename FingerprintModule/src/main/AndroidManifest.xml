@@ -11,7 +11,7 @@
     <application>
         <activity
             android:name=".FingerCaptureActivity"
-            android:exported="false" />
+            android:exported="true" />
     </application>
 
 </manifest>

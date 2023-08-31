@@ -3,17 +3,19 @@ package com.cll.remoteonboarding.ui.featureFingerPrint
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cll.remoteonboarding.R
-import com.cll.database.dao.FingerPrintDao
-import com.cll.database.entities.EntityFingerPrint
 import com.cll.database.repositories.FingerPrintRepository
+import com.cll.remoteonboarding.R
+import com.cll.remoteonboarding.di.DefaultDispatcher
 import com.cll.remoteonboarding.model.FingerPrint
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.async
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import java.util.ArrayList
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 data class FingerPrintUiState(
@@ -22,7 +24,8 @@ data class FingerPrintUiState(
 
 @HiltViewModel
 class FragmentFingerPrintViewModel @Inject constructor(
-    private val fingerPrintRepo: FingerPrintRepository, @ApplicationContext val context: Context
+    private val fingerPrintRepo: FingerPrintRepository, @ApplicationContext val context: Context,
+    @DefaultDispatcher val defaultDispatcher: CoroutineDispatcher
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(FingerPrintUiState())
     val uiState get() = _uiState.asStateFlow()
@@ -44,27 +47,35 @@ class FragmentFingerPrintViewModel @Inject constructor(
             13 -> {
                 array[1]
             }
+
             6 -> {
                 array[2]
             }
+
             1 -> {
                 array[3]
             }
+
             15 -> {
                 array[4]
             }
+
             7 -> {
                 array[5]
             }
+
             2 -> {
                 array[6]
             }
+
             43 -> {
                 array[7]
             }
+
             40 -> {
                 array[8]
             }
+
             else -> {
                 array[0]
             }
@@ -82,8 +93,11 @@ class FragmentFingerPrintViewModel @Inject constructor(
             )
         }
         viewModelScope.launch {
-
-            async { fingerPrintRepo.deleteByNistPosition(prints[0].nistPosCode) }.await()
+            withContext(defaultDispatcher) {
+                fingerPrintRepo.deleteByNistPosition(
+                    prints[0].nistPosCode
+                )
+            }
 
             prints.map {
                 fingerPrintRepo.insertFingerPrint(it)

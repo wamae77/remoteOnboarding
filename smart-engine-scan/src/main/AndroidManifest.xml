@@ -8,9 +8,9 @@
     <application android:largeHeap="true">
         <activity
             android:name="com.smartengines.ScanSmartActivity"
-            android:theme="@style/DashboardTheme" />
+       />
         <activity
             android:name="com.smartengines.MainResultView"
-            android:theme="@style/DashboardTheme" />
+           />
     </application>
 </manifest>

@@ -64,6 +64,9 @@ class FaceFragment : Fragment(), ApplicationUtils by ApplicationUtilsImpl(), Fac
         binding.btnCapture.setOnClickListener {
             faceExtraction();
         }
+        binding.btnNext.setOnClickListener{
+
+        }
     }
 
     private fun showImage(filename: String) {

@@ -81,11 +81,12 @@ class FragmentFingerPrint : Fragment(), ApplicationUtils by ApplicationUtilsImpl
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect {
-                    if (it.list == null) {
+                    if (it.list.isNullOrEmpty()) {
                         binding.txtStatus.visibility = View.VISIBLE
                     } else {
                         fingerPrintAdapter.updateList(it.list)
                         binding.txtStatus.visibility = View.GONE
+                        binding.btnNext.visibility = View.VISIBLE
                     }
                 }
             }
@@ -109,7 +110,7 @@ class FragmentFingerPrint : Fragment(), ApplicationUtils by ApplicationUtilsImpl
         popup.setAdapter(adapter)
 
 
-        popup.setOnItemClickListener { parent: AdapterView<*>?, view: View?, position: Int, id: Long ->
+        popup.setOnItemClickListener { _: AdapterView<*>?, _: View?, position: Int, _: Long ->
             val mFingerCaptureActivity = FingerCaptureActivity()
             mFingerCaptureActivity.setPositionCodeIndex(position);
             mFingerCaptureActivity.setUsername(username);

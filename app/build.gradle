@@ -49,6 +49,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
     packagingOptions {
         //lib in Face and Fingerprint sdks

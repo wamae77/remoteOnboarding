@@ -100,7 +100,7 @@ public class FingerCaptureActivity extends AppCompatActivity {
     private Preview m_preview = null;
     private ImageAnalysis m_imageAnalyzer = null;
     private Camera m_camera = null;
-    CameraSelector m_cameraSelector = null;
+    private CameraSelector m_cameraSelector = null;
     static DepthCamera m_depthCamera = null;
 
     private ProcessCameraProvider m_cameraProvider = null;

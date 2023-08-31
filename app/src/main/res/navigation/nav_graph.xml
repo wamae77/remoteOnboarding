@@ -46,4 +46,12 @@
             android:id="@+id/action_fragmentFingerPrint_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/personalDetailsFragment"
+        tools:layout="@layout/fragment_personal_details"
+        android:name="com.cll.remoteonboarding.ui.featurePersonalInfo.PersonalDetailsFragment"
+        android:label="PersonalDetailsFragment">
+        <action android:id="@+id/action_fragmentPersonalInfo_to_fragmentFingerPrint"
+            app:destination="@+id/fragmentFingerPrint"/>
+    </fragment>
 </navigation>

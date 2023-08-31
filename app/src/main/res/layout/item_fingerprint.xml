@@ -3,22 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="?attr/materialCardViewFilledStyle"
     android:layout_width="115dp"
-    android:layout_height="165dp"
+    android:layout_height="130dp"
     android:layout_margin="5dp">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:orientation="vertical"
-        android:padding="5dp">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
-            android:layout_height="97dp"
+            android:layout_height="80dp"
             android:layout_marginTop="6dp"
+            android:layout_gravity="center"
             android:src="@drawable/baseline_fingerprint_24" />
 
         <TextView
@@ -26,8 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Left Index"
-
+            android:hint="@string/left_index"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall" />
 
         <TextView
@@ -35,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Quality: 60"
+            android:text="@string/quality_60"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall" />
 
     </LinearLayout>

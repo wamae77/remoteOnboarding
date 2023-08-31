@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.cll.remoteonboarding.R
 import com.cll.remoteonboarding.databinding.FragmentFragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,6 +40,10 @@ class FragmentLogin : Fragment() {
 
         //val regex = "^(2547|254|07)[0-9]{7,10}$|^\+254[0-9]{9,10}$"
         setSpannableText()
+
+        binding.loginButton.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentLogin_to_FragmentFingerPrint)
+        }
     }
 
     private fun setSpannableText() {
