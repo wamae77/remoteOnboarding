@@ -5,29 +5,29 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/fragmentLogin">
 
-    <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.cll.remoteonboarding.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+<!--    <fragment-->
+<!--        android:id="@+id/FirstFragment"-->
+<!--        android:name="com.cll.remoteonboarding.FirstFragment"-->
+<!--        android:label="@string/first_fragment_label"-->
+<!--        tools:layout="@layout/fragment_first">-->
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.cll.featurefacecapture.FaceFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_face">
+<!--        <action-->
+<!--            android:id="@+id/action_FirstFragment_to_SecondFragment"-->
+<!--            app:destination="@id/SecondFragment" />-->
+<!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/SecondFragment"-->
+<!--        android:name="com.cll.featurefacecapture.FaceFragment"-->
+<!--        android:label="@string/second_fragment_label"-->
+<!--        tools:layout="@layout/fragment_face">-->
 
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-        <argument
-            android:name="userId"
-            app:argType="integer" />
-    </fragment>
+<!--        <action-->
+<!--            android:id="@+id/action_SecondFragment_to_FirstFragment"-->
+<!--            app:destination="@id/FirstFragment" />-->
+<!--        <argument-->
+<!--            android:name="userId"-->
+<!--            app:argType="integer" />-->
+<!--    </fragment>-->
     <fragment
         android:id="@+id/fragmentLogin"
         android:name="com.cll.remoteonboarding.ui.featureLogin.FragmentLogin"
@@ -42,9 +42,9 @@
         android:name="com.cll.remoteonboarding.ui.featureFingerPrint.FragmentFingerPrint"
         android:label="Fingerprints"
         tools:layout="@layout/fragment_fragment_finger_print" >
-        <action
-            android:id="@+id/action_fragmentFingerPrint_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_fragmentFingerPrint_to_SecondFragment"-->
+<!--            app:destination="@id/SecondFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/personalDetailsFragment"

@@ -73,9 +73,9 @@ class FragmentFingerPrint : Fragment(), ApplicationUtils by ApplicationUtilsImpl
 
         binding.btnNext.setOnClickListener {
 
-            findNavController().navigate(
-                R.id.action_fragmentFingerPrint_to_SecondFragment, bundleOf("userId" to 1)
-            )
+//            findNavController().navigate(
+//                R.id.action_fragmentFingerPrint_to_SecondFragment, bundleOf("userId" to 1)
+//            )
         }
 
         lifecycleScope.launch {
