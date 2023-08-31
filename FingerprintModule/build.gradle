@@ -19,14 +19,14 @@ publishing {
 }
 
 android {
-//    signingConfigs {
-//        release {
-//            storeFile file(var)
-//            storePassword 'gfhjkm'
-//            keyAlias 'android'
-//            keyPassword 'gfhjkm'
-//        }
-//    }
+    signingConfigs {
+        release {
+            storeFile file(var)
+            storePassword 'gfhjkm'
+            keyAlias 'android'
+            keyPassword 'gfhjkm'
+        }
+    }
     namespace 'com.cll.FingerPrintModule'
     compileSdk 33
 
